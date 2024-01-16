@@ -292,7 +292,7 @@ namespace ErpModuloAlmacenMP
             e.Graphics.DrawString("                      ", fontS, Brushes.Black, new RectangleF(0, largo += 10, ancho, 10));
             e.Graphics.DrawString("Fecha:  " + DateTime.Now.ToShortDateString(), ftext, Brushes.Black, new RectangleF(12, 170, ancho, 22));
             e.Graphics.DrawString("                      ", fontS, Brushes.Black, new RectangleF(0, largo += 10, ancho, 10));
-            e.Graphics.DrawString("Neto:" + tboxPesoNeto.Text + " KG", font, Brushes.Black, new RectangleF(220, 200, ancho, 40));
+            e.Graphics.DrawString("Neto:" + Math.Round(Convert.ToDouble(tboxPesoNeto.Text),1) + " KG", font, Brushes.Black, new RectangleF(220, 200, ancho, 40));
             e.Graphics.DrawString("                      ", fontS, Brushes.Black, new RectangleF(0, largo += 10, ancho, 10));
             e.Graphics.DrawString("Turno:  " + lblTurno.Text, ftext, Brushes.Black, new RectangleF(12, 230, ancho, 22));
             e.Graphics.DrawString("                      ", fontS, Brushes.Black, new RectangleF(0, largo += 10, ancho, 10));

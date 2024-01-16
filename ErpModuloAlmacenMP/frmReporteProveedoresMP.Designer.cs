@@ -40,7 +40,7 @@ namespace ErpModuloAlmacenMP
             this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.ServerReport.ReportPath = "/MateriaPrima/ReporteProveedores";
-            this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("http://localhost/ReportServer", System.UriKind.Absolute);
+            this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("http://localhost/ReportServerMateriaPrima", System.UriKind.Absolute);
             this.reportViewer1.Size = new System.Drawing.Size(1148, 800);
             this.reportViewer1.TabIndex = 0;
             // 
