@@ -29,20 +29,39 @@ namespace ErpModuloAlmacenMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ReportResumeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ReportDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ReportResumeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Resumen";
+            reportDataSource1.Value = this.ReportResumeBindingSource;
+            reportDataSource2.Name = "Detalles";
+            reportDataSource2.Value = this.ReportDetailsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ErpModuloAlmacenMP.Reports.Inventario.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.ServerReport.ReportPath = "/MateriaPrima/ReporteInventario";
-            this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("http://localhost/ReportServerMateriaPrima", System.UriKind.Absolute);
             this.reportViewer1.Size = new System.Drawing.Size(1148, 800);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // ReportResumeBindingSource
+            // 
+            this.ReportResumeBindingSource.DataSource = typeof(Domain.ReportResume);
+            // 
+            // ReportDetailsBindingSource
+            // 
+            this.ReportDetailsBindingSource.DataSource = typeof(Domain.ReportDetails);
             // 
             // frmReporteInventario
             // 
@@ -55,6 +74,8 @@ namespace ErpModuloAlmacenMP
             this.Name = "frmReporteInventario";
             this.Text = "frmReporteInventario";
             this.Load += new System.EventHandler(this.frmReporteInventario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ReportResumeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -62,5 +83,7 @@ namespace ErpModuloAlmacenMP
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource ReportResumeBindingSource;
+        private System.Windows.Forms.BindingSource ReportDetailsBindingSource;
     }
 }

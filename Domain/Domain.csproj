@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDetails.cs" />
+    <Compile Include="ReportResume.cs" />
     <Compile Include="UserModel.cs" />
   </ItemGroup>
   <ItemGroup>

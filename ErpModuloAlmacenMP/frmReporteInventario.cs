@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace ErpModuloAlmacenMP
 {
     public partial class frmReporteInventario : Form
     {
+        ReportResume model = new ReportResume();
+        ReportDetails detailModel = new ReportDetails();
         public frmReporteInventario()
         {
             InitializeComponent();
@@ -19,8 +22,21 @@ namespace ErpModuloAlmacenMP
 
         private void frmReporteInventario_Load(object sender, EventArgs e)
         {
-
+            GetResume();
+            GetDetails();
             this.reportViewer1.RefreshReport();
+        }
+        private void GetResume()
+        {
+            model.ResumenInv();
+            ReportResumeBindingSource.DataSource = model.resume;
+        }
+
+
+        private void GetDetails()
+        {
+            detailModel.DetallesInv();
+            ReportDetailsBindingSource.DataSource = detailModel.details;
         }
     }
 }
