@@ -64,7 +64,7 @@
     <ApplicationIcon>LogoMarca %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BarcodeStandard, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -175,6 +175,12 @@
     <Compile Include="frmEntrada.Designer.cs">
       <DependentUpon>frmEntrada.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEntradaApertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntradaApertura.Designer.cs">
+      <DependentUpon>frmEntradaApertura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     <EmbeddedResource Include="frmEntrada.resx">
       <DependentUpon>frmEntrada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEntradaApertura.resx">
+      <DependentUpon>frmEntradaApertura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteInventario.resx">
       <DependentUpon>frmReporteInventario.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,7 +275,6 @@
     <EmbeddedResource Include="Reports\ReporteEntradas.rdlc" />
     <EmbeddedResource Include="Reports\ReporteSalidasProceso.rdlc" />
     <EmbeddedResource Include="Reports\ReporteSalidasProveedores.rdlc" />
-    <None Include="ErpModuloAlmacenMP_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Domain.ReportDetails.datasource" />
     <None Include="Properties\DataSources\Domain.ReportResume.datasource" />
